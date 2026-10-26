@@ -1,14 +1,28 @@
 :root {
   --bg: #f4f6fa;
-  --surface: #ffffff;
+  --surface: rgba(255, 255, 255, 0.4);
   --text: #1f2937;
   --muted: #4b5563;
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --danger: #b91c1c;
+  --primary: #35363a;
+  --primary-dark: #b4961e;
+  --danger: #a10e0e;
+  --danger-hover: #c61919;
   --border: #d1d5db;
-  --radius: 10px;
+  --radius: 15px;
   --space: 1rem;
+  --h-bg: #673AB7;
+  --color: #fff;
+  --shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  --inner-space: 0.5rem;
+  --gradient: linear-gradient(to bottom,
+      #fdfdfc 0%,
+      /* near-white at the top */
+      #faf3e6 45%,
+      /* pale cream in the middle */
+      #f5e3bf 100%
+      /* warm peach-sand at the bottom */
+    );
+  --height: 100vh;
 }
 
 * {
@@ -18,9 +32,10 @@
 body {
   margin: 0;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  background: var(--bg);
+  background: var(--gradient);
   color: var(--text);
   line-height: 1.5;
+  min-height: var(--height);
 }
 
 .container {
@@ -31,14 +46,20 @@ body {
 
 h1 {
   text-align: center;
+  /*background: var(--h-bg);
+  color: var(--color);
+  padding: var(--inner-space);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);*/
 }
 
 .card {
   background: var(--surface);
-  border: 1px solid var(--border);
+  /*border: 1px solid var(--border); */
   border-radius: var(--radius);
   padding: var(--space);
   margin-bottom: var(--space);
+  box-shadow: var(--shadow);
 }
 
 .field {
@@ -98,7 +119,7 @@ input[aria-invalid="true"] {
 }
 
 .btn-danger:hover {
-  background: #991b1b;
+  background: var(--danger-hover);
 }
 
 .list {
